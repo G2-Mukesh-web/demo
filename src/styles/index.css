@@ -1,0 +1,214 @@
+@import './tokens.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    background-color: var(--color-bg-primary);
+    color: var(--color-ink-primary);
+    font-family: var(--font-sans);
+    letter-spacing: -0.01em;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    overflow-x: hidden;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    font-family: var(--font-sans);
+  }
+
+  /* Display & Section Headings */
+  h1, h2, h3, h4, .font-editorial {
+    font-family: var(--font-serif);
+    letter-spacing: -0.02em;
+    font-feature-settings: "liga" on, "kern" on;
+    font-weight: 400;
+  }
+
+  /* UI Text & Paragraphs */
+  p, span, a, button, input, textarea, select, label {
+    font-family: var(--font-sans);
+  }
+
+  ::selection {
+    background-color: #D4AF37;
+    color: #1B2A47;
+  }
+
+  /* Keyboard Accessibility Focus */
+  *:focus-visible {
+    outline: 1px solid #D4AF37;
+    outline-offset: 2px;
+  }
+}
+
+@layer utilities {
+  .editorial-heading-hero {
+    font-family: var(--font-serif);
+    font-size: var(--text-display-hero);
+    line-height: var(--leading-tight);
+    letter-spacing: -0.025em;
+    font-weight: 400;
+  }
+
+  .editorial-heading-1 {
+    font-family: var(--font-serif);
+    font-size: var(--text-h1);
+    line-height: var(--leading-heading);
+    letter-spacing: -0.02em;
+    font-weight: 400;
+  }
+
+  .editorial-heading-2 {
+    font-family: var(--font-serif);
+    font-size: var(--text-h2);
+    line-height: var(--leading-heading);
+    letter-spacing: -0.015em;
+    font-weight: 400;
+  }
+
+  .editorial-heading-3 {
+    font-family: var(--font-serif);
+    font-size: var(--text-h3);
+    line-height: 1.25;
+    letter-spacing: -0.01em;
+    font-weight: 400;
+  }
+
+  /* Small uppercase labels and metadata (Plus Jakarta Sans) */
+  .editorial-eyebrow {
+    font-family: var(--font-sans);
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.16em;
+    color: #D4AF37;
+  }
+
+  .editorial-meta {
+    font-family: var(--font-sans);
+    font-size: 0.6875rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+  }
+
+  .editorial-container {
+    width: 100%;
+    max-width: var(--container-max-width);
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+  }
+
+  @media (min-width: 768px) {
+    .editorial-container {
+      padding-left: 2rem;
+      padding-right: 2rem;
+    }
+  }
+
+  @media (min-width: 1280px) {
+    .editorial-container {
+      padding-left: 3rem;
+      padding-right: 3rem;
+    }
+  }
+}
+
+/* Architectural Card System & Smooth 0.3s Border Transitions */
+.arch-card {
+  background-color: #FFFFFF;
+  border: 1px solid #EAE6DF;
+  border-radius: 2px;
+  transition: border-color 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.arch-card:hover {
+  border-color: #D4AF37;
+}
+
+/* Architectural Form Inputs */
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="password"],
+input[type="number"],
+input[type="file"],
+textarea,
+select {
+  background-color: #FFFFFF;
+  border: 1px solid #EAE6DF;
+  color: #1B2A47;
+  border-radius: 2px;
+  transition: border-color 0.3s ease, outline 0.3s ease;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: #777777;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  border-color: #D4AF37 !important;
+  outline: 1px solid #D4AF37 !important;
+}
+
+/* Subtle architectural image scale (1.02) on hover */
+.img-zoom-wrapper {
+  overflow: hidden;
+  border-radius: 2px;
+}
+
+.img-zoom-wrapper img {
+  transition: transform 0.4s ease;
+  will-change: transform;
+}
+
+.group:hover .img-zoom-wrapper img,
+.img-zoom-wrapper:hover img {
+  transform: scale(1.02);
+}
+
+/* Architectural Animated Underline Link */
+.arch-link {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  transition: color 0.3s ease;
+}
+
+.arch-link::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0%;
+  height: 1px;
+  background-color: #D4AF37;
+  transition: width 0.3s ease;
+}
+
+.arch-link:hover::after,
+.group:hover .arch-link::after {
+  width: 100%;
+}
+
+/* Button Arrow 4px shift */
+.btn-arrow {
+  transition: transform 0.3s ease;
+}
+
+.group:hover .btn-arrow,
+button:hover .btn-arrow,
+a:hover .btn-arrow {
+  transform: translateX(4px);
+}
