@@ -6,45 +6,49 @@ import { prefersReducedMotion, ANIM } from '../../utils/animations';
 export function PageTransition() {
   const { pathname } = useLocation();
   const curtainRef = useRef(null);
-  const isFirstRender = useRef(true);
+  const prevPathRef = useRef(pathname);
 
   useEffect(() => {
-    // Skip on very first mount so initial hero intro can play cleanly
-    if (isFirstRender.current) {
-      isFirstRender.current = false;
+    // Only animate when navigating between different routes
+    if (prevPathRef.current === pathname) {
       return;
     }
+    prevPathRef.current = pathname;
 
     if (prefersReducedMotion()) return;
 
     const curtain = curtainRef.current;
     if (!curtain) return;
 
-    const tl = gsap.timeline({
-      defaults: { ease: ANIM.ease.editorial },
-    });
-
-    // Elegant curtain reveal under 550ms
-    tl.set(curtain, { display: 'block', scaleY: 1, transformOrigin: 'top' })
-      .to(curtain, {
-        scaleY: 0,
-        transformOrigin: 'bottom',
-        duration: ANIM.duration.pageTransition,
-        ease: 'power3.inOut',
-        onComplete: () => {
-          gsap.set(curtain, { display: 'none' });
-        },
+    const ctx = gsap.context(() => {
+      const tl = gsap.timeline({
+        defaults: { ease: ANIM.ease.editorial },
       });
 
+      tl.set(curtain, { display: 'block', scaleY: 1, transformOrigin: 'top' })
+        .to(curtain, {
+          scaleY: 0,
+          transformOrigin: 'bottom',
+          duration: ANIM.duration.pageTransition || 0.4,
+          ease: 'power3.inOut',
+          onComplete: () => {
+            if (curtain) curtain.style.display = 'none';
+          },
+        });
+    });
+
     return () => {
-      tl.kill();
+      ctx.revert();
+      if (curtain) {
+        curtain.style.display = 'none';
+      }
     };
   }, [pathname]);
 
   return (
     <div
       ref={curtainRef}
-      className="fixed inset-0 z-[999] bg-bg-dark pointer-events-none hidden"
+      className="fixed inset-0 z-[999] bg-[#1D211F] pointer-events-none hidden"
       style={{ transformOrigin: 'bottom' }}
     />
   );

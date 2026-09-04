@@ -7,19 +7,19 @@ import { prefersReducedMotion } from '../../utils/animations';
 
 gsap.registerPlugin(ScrollTrigger);
 
-const FRAMES_SET_1_COUNT = 300;
+const FRAMES_SET_1_COUNT = 240;
 const FRAMES_SET_2_COUNT = 240;
 const TOTAL_FRAMES = FRAMES_SET_1_COUNT + FRAMES_SET_2_COUNT;
 
-// Master continuous image sequence array (numerically ordered: 1..300, then 1..240)
+// Master continuous image sequence array (numerically ordered: 1..240, then 1..240)
 const ALL_FRAMES = (() => {
   const list = [];
-  // Set 1: frame.1 (001 -> 300)
+  // Set 1: frame.1 from video 1 (001 -> 240)
   for (let i = 1; i <= FRAMES_SET_1_COUNT; i++) {
     const num = String(i).padStart(3, '0');
     list.push(`/frames/frame.1/ezgif-frame-${num}.jpg`);
   }
-  // Set 2: frame.2 (001 -> 240) -> sequence 301..540 (indices 300..539)
+  // Set 2: frame.2 (001 -> 240) -> sequence 241..480 (indices 240..479)
   for (let i = 1; i <= FRAMES_SET_2_COUNT; i++) {
     const num = String(i).padStart(3, '0');
     list.push(`/frames/frame.2/ezgif-frame-${num}.jpg`);
@@ -33,7 +33,7 @@ const CHAPTERS = [
     id: 1,
     number: '01 / 09',
     startFrame: 0,
-    endFrame: 60,
+    endFrame: 48,
     startProgress: 0.00,
     endProgress: 0.10,
     heading: "WE DON'T JUST\nDESIGN SPACES.",
@@ -43,8 +43,8 @@ const CHAPTERS = [
   {
     id: 2,
     number: '02 / 09',
-    startFrame: 61,
-    endFrame: 130,
+    startFrame: 49,
+    endFrame: 105,
     startProgress: 0.10,
     endProgress: 0.22,
     heading: "FROM IDEA\nTO REALITY.",
@@ -54,8 +54,8 @@ const CHAPTERS = [
   {
     id: 3,
     number: '03 / 09',
-    startFrame: 131,
-    endFrame: 200,
+    startFrame: 106,
+    endFrame: 160,
     startProgress: 0.22,
     endProgress: 0.33,
     heading: "MATERIALS.\nLIGHT. SPACE.",
@@ -65,8 +65,8 @@ const CHAPTERS = [
   {
     id: 4,
     number: '04 / 09',
-    startFrame: 201,
-    endFrame: 300,
+    startFrame: 161,
+    endFrame: 239,
     startProgress: 0.33,
     endProgress: 0.50,
     heading: "DESIGNED\nWITH CARE.",
@@ -76,8 +76,8 @@ const CHAPTERS = [
   {
     id: 5,
     number: '05 / 09',
-    startFrame: 301,
-    endFrame: 370,
+    startFrame: 240,
+    endFrame: 295,
     startProgress: 0.50,
     endProgress: 0.62,
     heading: "ARCHITECTURE\n& INTERIORS.",
@@ -87,8 +87,8 @@ const CHAPTERS = [
   {
     id: 6,
     number: '06 / 09',
-    startFrame: 371,
-    endFrame: 440,
+    startFrame: 296,
+    endFrame: 350,
     startProgress: 0.62,
     endProgress: 0.73,
     heading: "EVERY DETAIL\nMATTERS.",
@@ -98,8 +98,8 @@ const CHAPTERS = [
   {
     id: 7,
     number: '07 / 09',
-    startFrame: 441,
-    endFrame: 510,
+    startFrame: 351,
+    endFrame: 405,
     startProgress: 0.73,
     endProgress: 0.85,
     heading: "BUILT AROUND\nYOUR LIFE.",
@@ -109,8 +109,8 @@ const CHAPTERS = [
   {
     id: 8,
     number: '08 / 09',
-    startFrame: 511,
-    endFrame: 570,
+    startFrame: 406,
+    endFrame: 450,
     startProgress: 0.85,
     endProgress: 0.94,
     heading: "TIMELESS\nBY DESIGN.",
@@ -120,8 +120,8 @@ const CHAPTERS = [
   {
     id: 9,
     number: '09 / 09',
-    startFrame: 571,
-    endFrame: 539,
+    startFrame: 451,
+    endFrame: 479,
     startProgress: 0.94,
     endProgress: 1.00,
     heading: "LET'S CREATE\nSOMETHING SPECIAL.",
@@ -151,7 +151,7 @@ export function ImmersiveSequenceHero() {
   const renderFrame = (frameIndex) => {
     const canvas = canvasRef.current;
     if (!canvas) return;
-    const ctx = canvas.getContext('2d', { alpha: false });
+    const ctx = canvas.getContext('2d');
     if (!ctx) return;
 
     let imgToDraw = null;
