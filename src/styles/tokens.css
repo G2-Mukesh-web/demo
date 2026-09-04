@@ -1,71 +1,76 @@
 /* ==========================================================================
-   DESIGN SYSTEM TOKENS — ATELIER VAUQUELIN
-   Ivory (#FDFBF7) + Deep Navy (#1B2A47) + Warm Brass (#D4AF37)
-   Borders: Soft Warm Grey (#EAE6DF) -> Warm Gold (#D4AF37) on Hover
-   Geometry: Sharp Architectural 2px - 4px Max
+   DESIGN SYSTEM TOKENS — PREMIUM ARCHITECTURAL INTERIOR DESIGN STUDIO
+   Primary: Deep Muted Forest/Sage (#303A35) ~45-50%
+   Secondary: Warm Linen (#EFEFEA) ~35-40%
+   Darkest: Deep Forest Black (#1D211F) ~10-15%
+   Accent: Muted Terracotta (#C27D66) ~3-5%
+   Light Text: #F5F3ED (on #303A35 & #1D211F)
+   Dark Text: #303A35 (on #EFEFEA)
+   Typography: Cormorant Garamond (Headings) + Inter (Body/UI)
    ========================================================================== */
 
 :root {
   /* ------------------------------------------------------------------------
      1. STRUCTURED BACKGROUND SYSTEM
-     - Primary Ivory (60%): #FDFBF7 (Warm luxury canvas)
-     - Surface / Card: #FFFFFF / #FDFBF7 (Elevated Ivory & Pure Surfaces)
-     - Deep Navy (30%): #1B2A47 (Selected Projects, Transforming Spaces, Footer)
-     - Deep Navy Surface: #233352 (Elevated Navy Card Surface)
-     - Footer Anchor: #1B2A47 (Deep Navy)
+     - Primary Deep Muted Forest/Sage (45-50%): #303A35
+     - Secondary Warm Linen (35-40%): #EFEFEA
+     - Darkest Deep Forest Black (10-15%): #1D211F
+     - Accent Muted Terracotta (3-5%): #C27D66
      ------------------------------------------------------------------------ */
-  --color-bg-primary: #FDFBF7;       /* Primary Ivory canvas (60%) */
-  --color-bg-surface: #FFFFFF;       /* Pure white cards & forms */
-  --color-bg-warm: #F7F3EB;          /* Subtle warm ivory alternate */
-  --color-bg-stone: #F7F3EB;         /* Soft stone ivory */
-  --color-bg-sage: #F0EDE4;          /* Warm neutral tint */
-  --color-bg-dark: #1B2A47;          /* Signature Deep Navy (30%) */
-  --color-bg-dark-surface: #233352;  /* Elevated Navy surface */
-  --color-bg-footer: #1B2A47;        /* Deep Navy footer */
+  --color-bg-primary: #303A35;       /* Primary Deep Muted Forest/Sage */
+  --color-bg-forest: #303A35;        /* Deep Muted Forest/Sage */
+  --color-bg-surface: #303A35;       /* Forest Surface */
+  --color-bg-linen: #EFEFEA;         /* Warm Linen */
+  --color-bg-warm: #EFEFEA;          /* Warm Linen */
+  --color-bg-stone: #EFEFEA;         /* Warm Linen */
+  --color-bg-sage: #303A35;          /* Deep Muted Forest/Sage */
+  --color-bg-dark: #1D211F;          /* Deep Forest Black */
+  --color-bg-dark-surface: #242927;  /* Deep Forest Black elevated surface */
+  --color-bg-footer: #1D211F;        /* Deep Forest Black footer */
 
   /* Inks / Typography */
-  --color-ink-primary: #1B2A47;      /* Primary Dark Text (Deep Navy) */
-  --color-ink-muted: #5F6470;        /* Secondary Text (Soft Charcoal Slate) */
-  --color-ink-subtle: #8A8F9B;       /* Captions & metadata */
-  --color-ink-light: #FDFBF7;        /* Light Text on Navy sections (Ivory) */
-  --color-ink-dark-muted: #D9DCE2;   /* Muted Light Text on Navy sections */
+  --color-ink-primary: #303A35;      /* Dark text on #EFEFEA */
+  --color-ink-light: #F5F3ED;        /* Light text on #303A35 & #1D211F */
+  --color-ink-muted: #5C6661;        /* Muted dark text on light */
+  --color-ink-subtle: #75807B;       /* Subtle dark text on light */
+  --color-ink-dark-muted: #A3ADA7;   /* Muted light text on dark */
+  --color-ink-dark-subtle: #8E9993;  /* Subtle light text on dark */
 
-  /* Primary Accent: Warm Brass / Gold (10% Max - Detail Material) */
-  --color-accent-brass: #D4AF37;     /* Warm Brass / Gold */
-  --color-accent-brass-hover: #1B2A47;
-  --color-accent-sage: #D4AF37;
-  --color-accent-sage-hover: #1B2A47;
-  --color-accent-detail: #D4AF37;
-  --color-accent-terracotta: #D4AF37;
+  /* Accent: Muted Terracotta (#C27D66) */
+  --color-accent-terracotta: #C27D66;
+  --color-accent-terracotta-hover: #A8624E;
+  --color-accent-brass: #C27D66;
+  --color-accent-brass-hover: #A8624E;
+  --color-accent-detail: #C27D66;
 
-  /* Architectural Hairline Borders (#EAE6DF default -> #D4AF37 on hover) */
-  --color-border-light: #EAE6DF;     /* Soft Warm Grey border */
-  --color-border-warm: #EAE6DF;
-  --color-border-dark: #35435B;      /* Navy section border */
-  --color-border-card: #EAE6DF;
-  --color-border-hover: #D4AF37;     /* Warm Gold hover border */
-  --color-border-sage: rgba(212, 175, 55, 0.3);
+  /* Architectural Borders */
+  --color-border-light: rgba(48, 58, 53, 0.12);   /* On #EFEFEA */
+  --color-border-warm: rgba(48, 58, 53, 0.18);    /* Medium border on light */
+  --color-border-dark: rgba(245, 243, 237, 0.12); /* On #303A35 */
+  --color-border-deep: rgba(245, 243, 237, 0.10); /* On #1D211F */
+  --color-border-card: rgba(245, 243, 237, 0.12);
+  --color-border-hover: #C27D66;                  /* Muted Terracotta hover */
 
   /* ------------------------------------------------------------------------
      2. EXACTLY TWO TYPOGRAPHY FAMILIES
-     - Primary/Display: Cormorant Garamond
-     - Secondary/UI: Plus Jakarta Sans
+     - Primary Headings: Cormorant Garamond
+     - Secondary/Body/UI: Inter
      ------------------------------------------------------------------------ */
   --font-display: 'Cormorant Garamond', Georgia, serif;
   --font-serif: 'Cormorant Garamond', Georgia, serif;
-  --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 
   /* Font Sizes Scale */
-  --text-display-hero: clamp(2.75rem, 5.5vw, 5rem);  /* 44px - 80px */
-  --text-h1: clamp(2.25rem, 4vw, 3.75rem);           /* 36px - 60px */
-  --text-h2: clamp(1.75rem, 2.8vw, 2.5rem);          /* 28px - 40px */
-  --text-h3: clamp(1.35rem, 2vw, 1.75rem);           /* 22px - 28px */
-  --text-body-lg: 1.125rem;                           /* 18px */
-  --text-body: 1rem;                                  /* 16px */
-  --text-body-sm: 0.875rem;                           /* 14px */
+  --text-display-hero: clamp(2.5rem, 5.5vw, 4.75rem); /* 40px - 76px */
+  --text-h1: clamp(2.15rem, 4vw, 3.75rem);            /* 34px - 60px */
+  --text-h2: clamp(1.75rem, 2.8vw, 2.5rem);           /* 28px - 40px */
+  --text-h3: clamp(1.35rem, 2vw, 1.85rem);            /* 22px - 30px */
+  --text-body-lg: 1.0625rem;                          /* 17px */
+  --text-body: 0.9375rem;                             /* 15px */
+  --text-body-sm: 0.84375rem;                         /* 13.5px */
   --text-caption: 0.75rem;                            /* 12px */
 
-  --leading-tight: 1.08;
+  --leading-tight: 1.1;
   --leading-heading: 1.18;
   --leading-body: 1.65;
 
@@ -78,7 +83,7 @@
   --container-gutter-mobile: 1.25rem;
 
   /* ------------------------------------------------------------------------
-     4. GEOMETRY & CORNERS (Strict 2px - 4px Max — No Bubbly UI)
+     4. GEOMETRY & CORNERS (Strict 2px - 4px Max)
      ------------------------------------------------------------------------ */
   --radius-xs: 2px;
   --radius-sm: 2px;
@@ -88,15 +93,14 @@
   /* ------------------------------------------------------------------------
      5. ELEVATION & SUBTLE DEPTH
      ------------------------------------------------------------------------ */
-  --shadow-subtle: 0 1px 3px rgba(27, 42, 71, 0.03), 0 4px 10px rgba(27, 42, 71, 0.02);
-  --shadow-card: 0 2px 6px rgba(27, 42, 71, 0.03), 0 10px 20px rgba(27, 42, 71, 0.04);
-  --shadow-lift: 0 4px 12px rgba(27, 42, 71, 0.05), 0 14px 28px rgba(27, 42, 71, 0.06);
+  --shadow-subtle: 0 1px 3px rgba(29, 33, 31, 0.08), 0 4px 10px rgba(29, 33, 31, 0.05);
+  --shadow-card: 0 2px 6px rgba(29, 33, 31, 0.08), 0 10px 20px rgba(29, 33, 31, 0.07);
+  --shadow-lift: 0 4px 12px rgba(29, 33, 31, 0.12), 0 14px 28px rgba(29, 33, 31, 0.15);
 
   /* ------------------------------------------------------------------------
-     6. UNIFIED TRANSITIONS (0.3s standard / 0.4s image scale)
+     6. UNIFIED TRANSITIONS (250ms - 350ms standard)
      ------------------------------------------------------------------------ */
   --ease-editorial: cubic-bezier(0.25, 1, 0.5, 1);
-  --transition-fast: 200ms ease;
+  --transition-fast: 250ms ease;
   --transition-normal: 300ms ease;
-  --transition-image: 400ms ease;
 }

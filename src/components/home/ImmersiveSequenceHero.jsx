@@ -7,10 +7,11 @@ import { prefersReducedMotion } from '../../utils/animations';
 
 gsap.registerPlugin(ScrollTrigger);
 
-const TOTAL_FRAMES = 600;
 const FRAMES_SET_1_COUNT = 300;
+const FRAMES_SET_2_COUNT = 240;
+const TOTAL_FRAMES = FRAMES_SET_1_COUNT + FRAMES_SET_2_COUNT;
 
-// Master continuous 600-frame array (numerically ordered)
+// Master continuous image sequence array (numerically ordered: 1..300, then 1..240)
 const ALL_FRAMES = (() => {
   const list = [];
   // Set 1: frame.1 (001 -> 300)
@@ -18,15 +19,15 @@ const ALL_FRAMES = (() => {
     const num = String(i).padStart(3, '0');
     list.push(`/frames/frame.1/ezgif-frame-${num}.jpg`);
   }
-  // Set 2: frame.2 (001 -> 300) -> sequence 301..600 (indices 300..599)
-  for (let i = 1; i <= 300; i++) {
+  // Set 2: frame.2 (001 -> 240) -> sequence 301..540 (indices 300..539)
+  for (let i = 1; i <= FRAMES_SET_2_COUNT; i++) {
     const num = String(i).padStart(3, '0');
     list.push(`/frames/frame.2/ezgif-frame-${num}.jpg`);
   }
   return list;
 })();
 
-// Storytelling chapters data synchronized across the 600-frame sequence
+// Storytelling chapters data synchronized across the sequence
 const CHAPTERS = [
   {
     id: 1,
@@ -36,7 +37,7 @@ const CHAPTERS = [
     startProgress: 0.00,
     endProgress: 0.10,
     heading: "WE DON'T JUST\nDESIGN SPACES.",
-    supporting: "We shape how a space feels, functions and lives.",
+    supporting: "We shape how your space feels, works, and lives every day.",
     align: 'left',
   },
   {
@@ -46,8 +47,8 @@ const CHAPTERS = [
     endFrame: 130,
     startProgress: 0.10,
     endProgress: 0.22,
-    heading: "FROM IDEA\nTO FORM.",
-    supporting: "Every project begins with an idea — refined through space, proportion and purpose.",
+    heading: "FROM IDEA\nTO REALITY.",
+    supporting: "Every project starts with an idea — planned to fit your needs, space, and lifestyle.",
     align: 'left',
   },
   {
@@ -57,8 +58,8 @@ const CHAPTERS = [
     endFrame: 200,
     startProgress: 0.22,
     endProgress: 0.33,
-    heading: "MATERIAL.\nLIGHT. SPACE.",
-    supporting: "Every line, material and detail works together to create a complete experience.",
+    heading: "MATERIALS.\nLIGHT. SPACE.",
+    supporting: "Quality materials, natural light, and clean layouts work together for a complete experience.",
     align: 'left',
   },
   {
@@ -68,8 +69,8 @@ const CHAPTERS = [
     endFrame: 300,
     startProgress: 0.33,
     endProgress: 0.50,
-    heading: "DESIGNED\nWITH INTENTION.",
-    supporting: "We balance aesthetics, function and the character of every space.",
+    heading: "DESIGNED\nWITH CARE.",
+    supporting: "We balance beauty, everyday comfort, and practical use in every room.",
     align: 'left',
   },
   {
@@ -79,8 +80,8 @@ const CHAPTERS = [
     endFrame: 370,
     startProgress: 0.50,
     endProgress: 0.62,
-    heading: "ARCHITECTURE\nMEETS INTERIORS.",
-    supporting: "From the structure to the smallest detail, every element belongs to one vision.",
+    heading: "ARCHITECTURE\n& INTERIORS.",
+    supporting: "From the outside structure to the smallest indoor detail, everything works as one.",
     align: 'left',
   },
   {
@@ -90,8 +91,8 @@ const CHAPTERS = [
     endFrame: 440,
     startProgress: 0.62,
     endProgress: 0.73,
-    heading: "EVERY DETAIL\nHAS A PURPOSE.",
-    supporting: "Thoughtful design transforms ordinary moments into meaningful experiences.",
+    heading: "EVERY DETAIL\nMATTERS.",
+    supporting: "Thoughtful design turns everyday routines into comfortable moments.",
     align: 'left',
   },
   {
@@ -101,8 +102,8 @@ const CHAPTERS = [
     endFrame: 510,
     startProgress: 0.73,
     endProgress: 0.85,
-    heading: "BUILT AROUND\nTHE WAY YOU LIVE.",
-    supporting: "Spaces should not simply look beautiful. They should belong to the people who experience them.",
+    heading: "BUILT AROUND\nYOUR LIFE.",
+    supporting: "Spaces shouldn't just look good. They should feel right for you and your family.",
     align: 'left',
   },
   {
@@ -113,18 +114,18 @@ const CHAPTERS = [
     startProgress: 0.85,
     endProgress: 0.94,
     heading: "TIMELESS\nBY DESIGN.",
-    supporting: "Creating spaces with clarity, character and lasting relevance.",
+    supporting: "Creating homes with clean style, durable quality, and lasting appeal.",
     align: 'left',
   },
   {
     id: 9,
     number: '09 / 09',
     startFrame: 571,
-    endFrame: 599,
+    endFrame: 539,
     startProgress: 0.94,
     endProgress: 1.00,
-    heading: "LET'S CREATE\nSOMETHING TIMELESS.",
-    supporting: "Architecture and interiors shaped around your vision.",
+    heading: "LET'S CREATE\nSOMETHING SPECIAL.",
+    supporting: "Architecture and interiors designed around your vision.",
     cta: true,
     align: 'left',
   },
@@ -475,7 +476,7 @@ export function ImmersiveSequenceHero() {
 
         {/* Top-Right Chapter Indicator */}
         <div className="absolute top-24 sm:top-28 right-6 sm:right-12 z-30 pointer-events-none">
-          <div className="px-3.5 py-1.5 bg-[#1B2A47]/70 backdrop-blur-md border border-[#35435B] text-[#D4AF37] font-sans text-[11px] uppercase tracking-[0.2em] font-semibold">
+          <div className="px-3.5 py-1.5 bg-[#1D211F]/90 backdrop-blur-md border border-[rgba(245,243,237,0.15)] text-[#C27D66] font-sans text-[11px] uppercase tracking-[0.2em] font-semibold rounded-[2px]">
             <span ref={chapterBadgeRef}>01 / 09</span>
           </div>
         </div>
@@ -483,12 +484,12 @@ export function ImmersiveSequenceHero() {
         {/* Initial Scroll Prompt (Fades out when scrolling begins) */}
         <div
           ref={scrollIndicatorRef}
-          className="absolute bottom-8 sm:bottom-12 right-6 sm:right-12 z-30 flex items-center gap-2 text-[#D9DCE2] transition-opacity duration-150"
+          className="absolute bottom-8 sm:bottom-12 right-6 sm:right-12 z-30 flex items-center gap-2 text-[#A3ADA7] transition-opacity duration-150"
         >
           <span className="font-sans text-[10px] sm:text-[11px] uppercase tracking-[0.25em] font-semibold">
             Scroll to Explore
           </span>
-          <ChevronDown className="w-4 h-4 text-[#D4AF37] animate-bounce" />
+          <ChevronDown className="w-4 h-4 text-[#C27D66] animate-bounce" />
         </div>
 
         {/* ---------------- 9 STORYTELLING CHAPTERS ---------------- */}
@@ -504,18 +505,18 @@ export function ImmersiveSequenceHero() {
               }}
             >
               {/* Studio Eyebrow */}
-              <div className="inline-flex items-center gap-2 mb-3 text-[#D4AF37] font-sans text-[10px] sm:text-xs uppercase tracking-[0.22em] font-semibold">
-                <span className="w-2 h-px bg-[#D4AF37]" />
+              <div className="inline-flex items-center gap-2 mb-3 text-[#C27D66] font-sans text-[10px] sm:text-xs uppercase tracking-[0.22em] font-semibold">
+                <span className="w-2 h-px bg-[#C27D66]" />
                 <span>Atelier Vauquelin • Chapter {chap.number}</span>
               </div>
 
               {/* Large Display Heading in Cormorant Garamond */}
-              <h2 className="font-editorial text-3xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl text-[#FDFBF7] font-normal leading-[1.04] tracking-tight whitespace-pre-line mb-4">
+              <h2 className="font-editorial text-3xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl text-[#F5F3ED] font-normal leading-[1.04] tracking-tight whitespace-pre-line mb-4">
                 {chap.heading}
               </h2>
 
-              {/* Supporting Text in Plus Jakarta Sans */}
-              <p className="font-sans text-xs sm:text-base lg:text-lg text-[#D9DCE2] max-w-xl font-light leading-relaxed mb-6">
+              {/* Supporting Text in Inter */}
+              <p className="font-sans text-xs sm:text-base lg:text-lg text-[#A3ADA7] max-w-xl font-light leading-relaxed mb-6">
                 {chap.supporting}
               </p>
 
@@ -524,9 +525,9 @@ export function ImmersiveSequenceHero() {
                 <div className="pt-2 pointer-events-auto">
                   <Link
                     to="/contact"
-                    className="inline-flex items-center gap-3 px-6 sm:px-8 py-3.5 sm:py-4 bg-[#FDFBF7] hover:bg-[#D4AF37] text-[#1B2A47] font-sans text-xs uppercase tracking-[0.2em] font-semibold transition-all duration-300 shadow-lift group"
+                    className="inline-flex items-center gap-3 px-6 sm:px-8 py-3.5 sm:py-4 bg-[#C27D66] hover:bg-[#A8624E] text-[#1D211F] hover:text-[#F5F3ED] font-sans text-xs uppercase tracking-[0.2em] font-semibold transition-all duration-300 shadow-lift group rounded-[2px]"
                   >
-                    <span>Start a Conversation</span>
+                    <span>Get in Touch</span>
                     <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
                   </Link>
                 </div>
@@ -535,11 +536,11 @@ export function ImmersiveSequenceHero() {
           ))}
         </div>
 
-        {/* Bottom Subtle Brass Progress Bar */}
+        {/* Bottom Subtle Terracotta Progress Bar */}
         <div className="absolute bottom-0 left-0 right-0 h-1 bg-white/10 z-30 pointer-events-none">
           <div
             ref={progressBarRef}
-            className="h-full bg-[#D4AF37] transition-all duration-75"
+            className="h-full bg-[#C27D66] transition-all duration-75"
             style={{ width: '0%' }}
           />
         </div>

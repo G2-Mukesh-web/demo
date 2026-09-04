@@ -18,44 +18,44 @@ export function About() {
     {
       year: '2024',
       award: 'Dezeen Awards — International Residential Project of the Year',
-      project: 'Villa Madrone',
-      location: 'London, UK',
-      notes: 'Jury Citation: Recognized for its holistic integration into protected agricultural parkland and radical passive solar envelope.',
+      project: 'The Courtyard Villa',
+      location: 'Hyderabad, India',
+      notes: 'Jury Citation: Recognized for climate-responsive courtyard planning and modern stone craftsmanship.',
     },
     {
       year: '2023',
-      award: 'ArchDaily Building of the Year — Heritage Conservation & Adaptive Reuse',
-      project: 'Palazzo del Sale',
-      location: 'Venice, Italy',
-      notes: 'Jury Citation: A masterclass in surgical, reversible structural interventions touching 400-year-old masonry.',
+      award: 'Architectural Digest India Design Excellence Award',
+      project: 'Assagao Heritage Villa',
+      location: 'Goa, India',
+      notes: 'Jury Citation: Exceptional restoration of a 150-year-old historic laterite and teakwood villa.',
     },
     {
       year: '2023',
-      award: 'Equerre d’Argent Special Commendation — Cultural Architecture',
-      project: 'The Tate Pavilion',
-      location: 'Paris, France',
-      notes: 'Jury Citation: Precision glass engineering harmonized with blasted grey granite monoliths in Oxfordshire.',
+      award: 'Elle Decor India — Best Weekend Home Architecture',
+      project: 'The Alibaug Coastal Residence',
+      location: 'Alibaug, Maharashtra',
+      notes: 'Jury Citation: Seamless indoor-outdoor coastal pavilion built with native basalt stone and glass.',
     },
     {
       year: '2022',
-      award: 'Wallpaper* Design Awards — Best Alpine Wellness Sanctuary',
-      project: 'AER Alpine Sanctuary',
-      location: 'Milan, Italy',
-      notes: 'Jury Citation: Hydrothermal baths carved into native Swiss gneiss bedrock with transcendent acoustic stillness.',
+      award: 'Wallpaper* Design Awards — Best Hill Retreat Design',
+      project: 'AER Mountain Sanctuary',
+      location: 'Kasauli, Himachal Pradesh',
+      notes: 'Jury Citation: Stepped local quartzite architecture with valley-facing wellness suites.',
     },
     {
       year: '2021',
-      award: 'RIBA International Award for Excellence',
-      project: 'Maison de Calcaire',
-      location: 'London, UK',
-      notes: 'Jury Citation: Demonstrating the enduring thermal and aesthetic power of unprocessed French limestone.',
+      award: 'Domus India Architectural Excellence Citation',
+      project: 'Jubilee Hills Private Residence',
+      location: 'Hyderabad, India',
+      notes: 'Jury Citation: Highlighting the natural beauty, cooling, and durability of Kota and Jaisalmer stone.',
     },
     {
       year: '2019',
-      award: 'Prix de l’Académie des Beaux-Arts in Architecture',
-      project: 'Atelier Vauquelin Studio Monograph',
-      location: 'Paris, France',
-      notes: 'Awarded to founding partners Camille Vauquelin and Édouard Laurent for contributions to slow tectonic design.',
+      award: 'Indian Institute of Interior Designers (IIID) Studio Award',
+      project: 'Atelier Vauquelin Studio',
+      location: 'Mumbai, India',
+      notes: 'Awarded to studio partners Camille Vauquelin and Rohan Mehta for dedication to lasting Indian craft and materials.',
     },
   ];
 
@@ -125,258 +125,268 @@ export function About() {
   }, []);
 
   return (
-    <div ref={containerRef} className="w-full overflow-x-hidden">
+    <div ref={containerRef} className="w-full overflow-x-hidden bg-[#EFEFEA] text-[#303A35]">
       <SEO
-        title="Studio Story & Philosophy"
-        description="Founded in 2014 by Camille Vauquelin and Édouard Laurent, Atelier Vauquelin sculpts enduring architecture rooted in stone provenance, tactile craft, and quiet light."
+        title="Our Story & Philosophy"
+        description="Founded in 2014 by Camille Vauquelin and Rohan Mehta, Atelier Vauquelin creates timeless architecture rooted in natural materials, quality craft, and warm light."
       />
 
-      {/* 1. EDITORIAL STUDIO HERO BANNER (#F1ECE3 Warm Alternate Section) */}
-      <section className="bg-bg-warm py-20 lg:py-28 border-b border-border-warm/60">
+      {/* 1. EDITORIAL STUDIO HERO BANNER (Warm Linen #EFEFEA) */}
+      <section className="bg-[#EFEFEA] py-20 lg:py-28 border-b border-[rgba(48,58,53,0.12)]">
         <div className="editorial-container">
           <div className="max-w-4xl">
-            <span className="editorial-eyebrow mb-4 block">Studio Story & Ethos</span>
-            <h1 className="font-editorial text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-normal leading-[1.08] text-ink-primary mb-6 sm:mb-8">
-              A spatial practice dedicated to silent monuments, raw geological memory, and tectonic calm.
+            <span className="editorial-eyebrow mb-4 block text-[#C27D66]">Our Story & Approach</span>
+            <h1 className="font-editorial text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-normal leading-[1.08] text-[#303A35] mb-6 sm:mb-8">
+              We design beautiful, lasting architecture and warm, comfortable interiors.
             </h1>
-            <p className="text-ink-muted text-base sm:text-lg md:text-xl font-light leading-relaxed">
-              Founded in Paris in 2014 by Camille Vauquelin and Édouard Laurent, Atelier Vauquelin operates across Paris, London, and Geneva, orchestrating bespoke architecture and sensory interior spaces for discerning patrons worldwide.
+            <p className="text-[#5C6661] text-base sm:text-lg md:text-xl font-light leading-relaxed">
+              Founded in 2014 by Camille Vauquelin and Rohan Mehta, Atelier Vauquelin works across Mumbai, Bengaluru, and Hyderabad, designing custom homes and welcoming interiors for clients across India.
             </p>
           </div>
         </div>
       </section>
 
-      {/* 2. FOUNDING NARRATIVE & QUARRY PHILOSOPHY (#FAF9F5 Primary Background with #FFFFFF Tiles) */}
-      <Section variant="default" spacing="loose">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-start">
-          
-          {/* Left Column: Long-form Narrative */}
-          <div className="lg:col-span-6 space-y-6 sm:space-y-8">
-            <div>
-              <span className="editorial-eyebrow mb-3 block">Origins & Manifesto</span>
-              <h2 className="font-editorial text-3xl sm:text-4xl lg:text-5xl text-ink-primary leading-tight mb-4 font-normal">
-                Architecture as an enduring dialogue with the earth.
-              </h2>
-            </div>
+      {/* 2. FOUNDING NARRATIVE & PHILOSOPHY */}
+      <section className="py-20 md:py-28 lg:py-32 bg-[#EFEFEA]">
+        <div className="editorial-container">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-start">
+            
+            {/* Left Column: Long-form Narrative */}
+            <div className="lg:col-span-6 space-y-6 sm:space-y-8">
+              <div>
+                <span className="editorial-eyebrow mb-3 block text-[#C27D66]">Our Mission</span>
+                <h2 className="font-editorial text-3xl sm:text-4xl lg:text-5xl text-[#303A35] leading-tight mb-4 font-normal">
+                  Building homes that stand the test of time.
+                </h2>
+              </div>
 
-            <p className="text-ink-muted text-sm sm:text-base lg:text-lg leading-relaxed font-light">
-              We founded Atelier Vauquelin out of a mutual frustration with the disposable, transient nature of contemporary building. In an era dominated by synthetic composites and fast-paced commercial trends, we turned our focus backward to ancient geological permanence and forward to parametric structural precision.
-            </p>
-
-            <p className="text-ink-muted text-sm sm:text-base leading-relaxed font-light">
-              Every commission begins not on a digital canvas, but at the quarry, the clay pit, and the timber reserve. We believe that when stone is extracted from the immediate regional bedrock of a site, the resulting structure possesses an inherent gravity—a sense of belonging that cannot be synthesized.
-            </p>
-
-            <div className="p-6 sm:p-8 bg-bg-surface border-l-2 border-accent-brass space-y-3 shadow-subtle border border-border-light">
-              <p className="font-editorial text-lg sm:text-xl text-ink-primary italic leading-relaxed font-normal">
-                "A building reaches its fullest aesthetic resonance not on the day of handover, but thirty years later when rain, sunlight, and human touch have burnished its surfaces."
+              <p className="text-[#5C6661] text-sm sm:text-base lg:text-lg leading-relaxed font-light">
+                We started Atelier Vauquelin to build homes of lasting quality. While much of modern construction relies on temporary trends and synthetic materials, we focus on durable natural materials, smart engineering, and timeless design.
               </p>
-              <p className="font-sans text-xs font-semibold text-accent-brass uppercase tracking-widest">
-                — Camille Vauquelin, Founding Partner
+
+              <p className="text-[#5C6661] text-sm sm:text-base leading-relaxed font-light">
+                Every project starts by understanding your land, natural light, and surroundings. We select natural stone, quality timber, and durable finishes that look great on day one and age gracefully over the years.
               </p>
+
+              <div className="p-6 sm:p-8 bg-[#F5F5F0] border-l-2 border-[#C27D66] space-y-3 shadow-subtle border border-[rgba(48,58,53,0.12)] rounded-[2px]">
+                <p className="font-editorial text-lg sm:text-xl text-[#303A35] italic leading-relaxed font-normal">
+                  "A great home gets even better with time, as natural materials gain character and warmth with everyday living."
+                </p>
+                <p className="font-sans text-xs font-semibold text-[#C27D66] uppercase tracking-widest">
+                  — Camille Vauquelin, Founding Partner
+                </p>
+              </div>
+
+              <p className="text-[#5C6661] text-sm sm:text-base leading-relaxed font-light">
+                Our studio brings together architects, interior designers, and skilled craftspeople under one roof. From early site planning to custom woodwork and final styling, we take care of every detail.
+              </p>
+
+              <div className="pt-4 flex flex-wrap items-center gap-4">
+                <Button to="/team" variant="primary" size="md" arrow>
+                  Meet Our Team
+                </Button>
+                <Button to="/services" variant="outline" size="md">
+                  View Our Services
+                </Button>
+              </div>
+
+              {/* Material Provenance & Craft Ledger */}
+              <div className="mt-8 pt-8 border-t border-[rgba(48,58,53,0.12)] space-y-6">
+                <div className="bg-[#303A35] text-[#F5F3ED] p-6 sm:p-8 border border-[rgba(245,243,237,0.12)] hover:border-[#C27D66] transition-colors duration-300 rounded-[2px] shadow-subtle space-y-5">
+                  <div className="flex items-center justify-between border-b border-[rgba(245,243,237,0.12)] pb-4">
+                    <span className="font-sans text-xs font-semibold text-[#C27D66] uppercase tracking-[0.2em] flex items-center gap-2">
+                      <span className="w-1.5 h-1.5 rounded-full bg-[#C27D66]" />
+                      Quality Materials & Craftsmanship
+                    </span>
+                    <span className="font-editorial text-sm italic text-[#A3ADA7]">
+                      Our Standard
+                    </span>
+                  </div>
+
+                  <p className="text-xs sm:text-sm text-[#A3ADA7] leading-relaxed font-light">
+                    We choose honest, durable materials that are built to last. Every material is selected for its strength, natural beauty, and everyday comfort.
+                  </p>
+
+                  <div className="grid grid-cols-2 gap-4 pt-2">
+                    <div className="p-3.5 bg-[#242C28] border border-[rgba(245,243,237,0.12)] hover:border-[#C27D66] transition-colors duration-300 rounded-[2px] space-y-1">
+                      <span className="font-editorial text-lg text-[#F5F3ED] font-normal block">Natural Stone</span>
+                      <span className="font-sans text-[11px] text-[#A3ADA7] font-light block leading-tight">Sourced from quality regional quarries</span>
+                    </div>
+                    <div className="p-3.5 bg-[#242C28] border border-[rgba(245,243,237,0.12)] hover:border-[#C27D66] transition-colors duration-300 rounded-[2px] space-y-1">
+                      <span className="font-editorial text-lg text-[#F5F3ED] font-normal block">Solid Oak Wood</span>
+                      <span className="font-sans text-[11px] text-[#A3ADA7] font-light block leading-tight">Treated with natural beeswax</span>
+                    </div>
+                    <div className="p-3.5 bg-[#242C28] border border-[rgba(245,243,237,0.12)] hover:border-[#C27D66] transition-colors duration-300 rounded-[2px] space-y-1">
+                      <span className="font-editorial text-lg text-[#F5F3ED] font-normal block">Custom Bronze</span>
+                      <span className="font-sans text-[11px] text-[#A3ADA7] font-light block leading-tight">Durable metal fittings made to last</span>
+                    </div>
+                    <div className="p-3.5 bg-[#242C28] border border-[rgba(245,243,237,0.12)] hover:border-[#C27D66] transition-colors duration-300 rounded-[2px] space-y-1">
+                      <span className="font-editorial text-lg text-[#F5F3ED] font-normal block">Lime Plaster</span>
+                      <span className="font-sans text-[11px] text-[#A3ADA7] font-light block leading-tight">Breathable walls with acoustic calm</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
 
-            <p className="text-ink-muted text-sm sm:text-base leading-relaxed font-light">
-              Our studio unites architects, interior architects, acoustic engineers, and master stone conservators under one roof. By controlling every variable from early geotechnical feasibility to the hand-applied wax on unlacquered bronze hardware, we ensure no detail is left to compromise.
-            </p>
+            {/* Right Column: Photography with Parallax */}
+            <div className="lg:col-span-6 space-y-6 sm:space-y-8">
+              <div className="aspect-[4/3] bg-[#F5F5F0] overflow-hidden border border-[rgba(48,58,53,0.12)] shadow-card relative rounded-[2px]">
+                <img
+                  ref={parallaxImg1Ref}
+                  src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=1600&q=85"
+                  alt="Atelier Vauquelin Studio Practice"
+                  className="w-full h-full object-cover will-change-transform max-w-full"
+                />
+              </div>
 
-            <div className="pt-4 flex flex-wrap items-center gap-4">
-              <Button to="/team" variant="primary" size="md" arrow>
-                Meet Our Leadership Team
-              </Button>
-              <Button to="/services" variant="outline" size="md">
-                Explore Studio Disciplines
-              </Button>
-            </div>
-
-            {/* Material Provenance & Craft Ledger (Fills left column space opposite 2nd photo) */}
-            <div className="mt-8 pt-8 border-t border-[#EAE6DF] space-y-6">
-              <div className="bg-[#FFFFFF] p-6 sm:p-8 border border-[#EAE6DF] hover:border-[#D4AF37] transition-colors duration-300 rounded-[2px] shadow-subtle space-y-5">
-                <div className="flex items-center justify-between border-b border-[#EAE6DF] pb-4">
-                  <span className="font-sans text-xs font-semibold text-[#D4AF37] uppercase tracking-[0.2em] flex items-center gap-2">
-                    <span className="w-1.5 h-1.5 rounded-full bg-[#D4AF37]" />
-                    Material Provenance & Craft Ledger
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 bg-[#F5F5F0] p-6 sm:p-8 border border-[rgba(48,58,53,0.12)] shadow-subtle rounded-[2px]">
+                <div>
+                  <span className="font-sans text-xs font-semibold text-[#C27D66] uppercase tracking-wider block mb-2">
+                    01 / Natural Light & Comfort
                   </span>
-                  <span className="font-editorial text-sm italic text-[#5F6470]">
-                    Studio Standards
-                  </span>
+                  <p className="text-xs text-[#5C6661] leading-relaxed font-light">
+                    We design rooms around daylight and natural breezes, creating homes that are bright, comfortable, and energy-efficient.
+                  </p>
                 </div>
 
-                <p className="text-xs sm:text-sm text-[#5F6470] leading-relaxed font-light">
-                  We treat every architectural structure as a permanent geological artefact. Materials are selected for their thermal mass, tectonic weight, and capacity to patina with dignity over half a century.
-                </p>
+                <div>
+                  <span className="font-sans text-xs font-semibold text-[#C27D66] uppercase tracking-wider block mb-2">
+                    02 / Honest, Durable Materials
+                  </span>
+                  <p className="text-xs text-[#5C6661] leading-relaxed font-light">
+                    We work with real stone, solid wood, and genuine metal—materials that feel authentic, durable, and warm to the touch.
+                  </p>
+                </div>
 
-                <div className="grid grid-cols-2 gap-4 pt-2">
-                  <div className="p-3.5 bg-[#FDFBF7] border border-[#EAE6DF] hover:border-[#D4AF37] transition-colors duration-300 rounded-[2px] space-y-1">
-                    <span className="font-editorial text-lg text-[#1B2A47] font-normal block">Mineral Stone</span>
-                    <span className="font-sans text-[11px] text-[#5F6470] font-light block leading-tight">Quarried in Burgundy & Vals</span>
-                  </div>
-                  <div className="p-3.5 bg-[#FDFBF7] border border-[#EAE6DF] hover:border-[#D4AF37] transition-colors duration-300 rounded-[2px] space-y-1">
-                    <span className="font-editorial text-lg text-[#1B2A47] font-normal block">Smoked French Oak</span>
-                    <span className="font-sans text-[11px] text-[#5F6470] font-light block leading-tight">Aged with natural beeswax</span>
-                  </div>
-                  <div className="p-3.5 bg-[#FDFBF7] border border-[#EAE6DF] hover:border-[#D4AF37] transition-colors duration-300 rounded-[2px] space-y-1">
-                    <span className="font-editorial text-lg text-[#1B2A47] font-normal block">Unlacquered Bronze</span>
-                    <span className="font-sans text-[11px] text-[#5F6470] font-light block leading-tight">Custom foundry castings</span>
-                  </div>
-                  <div className="p-3.5 bg-[#FDFBF7] border border-[#EAE6DF] hover:border-[#D4AF37] transition-colors duration-300 rounded-[2px] space-y-1">
-                    <span className="font-editorial text-lg text-[#1B2A47] font-normal block">Slaked Lime Plaster</span>
-                    <span className="font-sans text-[11px] text-[#5F6470] font-light block leading-tight">Breathable acoustic stillness</span>
-                  </div>
+                <div className="pt-4 border-t border-[rgba(48,58,53,0.12)] sm:col-span-2">
+                  <span className="font-sans text-xs font-semibold text-[#C27D66] uppercase tracking-wider block mb-2">
+                    03 / Careful Craftsmanship
+                  </span>
+                  <p className="text-xs text-[#5C6661] leading-relaxed font-light">
+                    We work closely with trusted builders and master artisans to ensure every corner and joinery detail is built to perfection.
+                  </p>
                 </div>
               </div>
+
+              <div className="aspect-[16/9] bg-[#F5F5F0] overflow-hidden border border-[rgba(48,58,53,0.12)] relative rounded-[2px]">
+                <img
+                  ref={parallaxImg2Ref}
+                  src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1600&q=85"
+                  alt="Natural materials and architecture details"
+                  className="w-full h-full object-cover will-change-transform max-w-full"
+                />
+              </div>
             </div>
+
           </div>
-
-          {/* Right Column: Photography with Parallax */}
-          <div className="lg:col-span-6 space-y-6 sm:space-y-8">
-            <div className="aspect-[4/3] bg-bg-warm overflow-hidden border border-border-light shadow-card relative">
-              <img
-                ref={parallaxImg1Ref}
-                src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=1600&q=85"
-                alt="Atelier Vauquelin Studio Practice and Plaster Casts"
-                className="w-full h-full object-cover will-change-transform max-w-full"
-              />
-            </div>
-
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 bg-bg-surface p-6 sm:p-8 border border-border-light shadow-subtle">
-              <div>
-                <span className="font-sans text-xs font-semibold text-accent-brass uppercase tracking-wider block mb-2">
-                  01 / Geographic Immersion
-                </span>
-                <p className="text-xs text-ink-muted leading-relaxed font-light">
-                  Direct quarry selection in Provence, Burgundy, Istria, and Vals to source unique mineral slabs.
-                </p>
-              </div>
-
-              <div>
-                <span className="font-sans text-xs font-semibold text-accent-brass uppercase tracking-wider block mb-2">
-                  02 / Acoustic Serenity
-                </span>
-                <p className="text-xs text-ink-muted leading-relaxed font-light">
-                  Calibrated domestic acoustics using lime-washed acoustic plaster and sound-dampening fibrous partitions.
-                </p>
-              </div>
-
-              <div className="pt-4 border-t border-border-light sm:col-span-2">
-                <span className="font-sans text-xs font-semibold text-accent-brass uppercase tracking-wider block mb-2">
-                  03 / Reversible Stewardship
-                </span>
-                <p className="text-xs text-ink-muted leading-relaxed font-light">
-                  Strict conservation methodology for listed European heritage buildings ensuring surgical, non-destructive modern integration.
-                </p>
-              </div>
-            </div>
-
-            <div className="aspect-[16/9] bg-bg-warm overflow-hidden border border-border-light relative">
-              <img
-                ref={parallaxImg2Ref}
-                src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1600&q=85"
-                alt="Rammed Earth and Stone Details"
-                className="w-full h-full object-cover will-change-transform max-w-full"
-              />
-            </div>
-          </div>
-
         </div>
-      </Section>
+      </section>
 
-      {/* 3. DESIGN PHILOSOPHY / METHODOLOGY (#FFFFFF Surface Section with #FAF9F5 Cards) */}
-      <div className="gsap-reveal-section">
-        <Section
-          variant="surface"
-          spacing="loose"
-          eyebrow="Our Methodology"
-          title="The Studio Design Process"
-          subtitle="A slow, sensory, and rigorous 5-step methodology that guides every commission from concept to post-occupancy orientation."
-        >
+      {/* 3. DESIGN PROCESS (Deep Muted Forest #303A35) */}
+      <div className="gsap-reveal-section bg-[#303A35] text-[#F5F3ED] py-20 md:py-28 lg:py-32 border-t border-[rgba(245,243,237,0.12)]">
+        <div className="editorial-container">
+          <div className="mb-12 md:mb-16">
+            <span className="editorial-eyebrow text-[#C27D66] block mb-2">Our Process</span>
+            <h2 className="font-editorial text-3xl sm:text-4xl lg:text-5xl text-[#F5F3ED] font-normal">
+              How We Work
+            </h2>
+            <p className="text-[#A3ADA7] text-sm sm:text-base mt-2 font-light">
+              A clear, transparent 5-step process that guides every project from first ideas to moving day.
+            </p>
+          </div>
+
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
             {processSteps.map((step) => (
               <div
                 key={step.step}
-                className="gsap-reveal-item p-6 sm:p-8 bg-bg-primary border border-border-light hover:border-accent-brass transition-all duration-300 flex flex-col justify-between space-y-6"
+                className="gsap-reveal-item p-6 sm:p-8 bg-[#242C28] border border-[rgba(245,243,237,0.12)] hover:border-[#C27D66] transition-all duration-300 flex flex-col justify-between space-y-6 rounded-[2px]"
               >
                 <div>
-                  <div className="flex items-center justify-between font-sans text-xs text-accent-brass mb-4">
-                    <span className="font-editorial text-2xl text-accent-brass font-normal">{step.step}</span>
-                    <span className="text-ink-subtle uppercase tracking-wider font-semibold text-[11px]">{step.duration}</span>
+                  <div className="flex items-center justify-between font-sans text-xs text-[#C27D66] mb-4">
+                    <span className="font-editorial text-2xl text-[#C27D66] font-normal">{step.step}</span>
+                    <span className="text-[#A3ADA7] uppercase tracking-wider font-semibold text-[11px]">{step.duration}</span>
                   </div>
 
-                  <h3 className="font-editorial text-2xl text-ink-primary mb-3 font-normal">
+                  <h3 className="font-editorial text-2xl text-[#F5F3ED] mb-3 font-normal">
                     {step.phase}
                   </h3>
 
-                  <p className="font-sans text-xs font-semibold uppercase tracking-wider text-ink-primary mb-2">
+                  <p className="font-sans text-xs font-semibold uppercase tracking-wider text-[#F5F3ED] mb-2">
                     {step.summary}
                   </p>
 
-                  <p className="text-xs text-ink-muted leading-relaxed font-light">
+                  <p className="text-xs text-[#A3ADA7] leading-relaxed font-light">
                     {step.details}
                   </p>
                 </div>
 
-                <div className="pt-4 border-t border-border-light flex items-center gap-2 font-sans text-[11px] uppercase tracking-wider text-accent-brass font-semibold">
-                  <span className="w-1.5 h-1.5 bg-accent-brass rounded-full" />
-                  <span>Stage Milestone Verified</span>
+                <div className="pt-4 border-t border-[rgba(245,243,237,0.12)] flex items-center gap-2 font-sans text-[11px] uppercase tracking-wider text-[#C27D66] font-semibold">
+                  <span className="w-1.5 h-1.5 bg-[#C27D66] rounded-full" />
+                  <span>Verified Milestone</span>
                 </div>
               </div>
             ))}
 
-            {/* Practice Standards Card (#181816 Dark) */}
-            <div className="gsap-reveal-item p-6 sm:p-8 bg-bg-dark text-white border border-border-dark flex flex-col justify-between space-y-6">
+            {/* Practice Standards Card */}
+            <div className="gsap-reveal-item p-6 sm:p-8 bg-[#1D211F] text-white border border-[rgba(245,243,237,0.10)] flex flex-col justify-between space-y-6 rounded-[2px]">
               <div>
-                <span className="font-sans text-xs font-semibold text-accent-brass mb-4 block uppercase tracking-wider">Quality Assurance</span>
-                <h3 className="font-editorial text-2xl text-white mb-3 font-normal">Fixed Stage Deliverables</h3>
-                <p className="text-xs text-ink-subtle leading-relaxed font-light">
-                  Every stage requires formal client sign-off on cost schedules, 3D renderings, material boards, and statutory documents before proceeding to site tenders.
+                <span className="font-sans text-xs font-semibold text-[#C27D66] mb-4 block uppercase tracking-wider">Quality Assurance</span>
+                <h3 className="font-editorial text-2xl text-white mb-3 font-normal">Clear Stage Deliverables</h3>
+                <p className="text-xs text-[#A3ADA7] leading-relaxed font-light">
+                  Every stage includes clear drawings, 3D views, material samples, and cost breakdowns so you always know what to expect before moving forward.
                 </p>
               </div>
 
               <Button to="/services" variant="primary" size="sm" arrow>
-                Learn More in Services
+                Explore All Services
               </Button>
             </div>
           </div>
-        </Section>
+        </div>
       </div>
 
-      {/* 4. AWARDS & PRESS TIMELINE (#FAF9F5 Primary Background) */}
-      <div className="gsap-reveal-section">
-        <Section
-          variant="default"
-          spacing="loose"
-          eyebrow="Recognition Archive"
-          title="Awards, Juries & Honors"
-          subtitle="A chronological timeline of international recognitions awarded to our architecture, heritage conservation, and spatial research."
-        >
+      {/* 4. AWARDS & PRESS TIMELINE (Warm Linen #EFEFEA) */}
+      <div className="gsap-reveal-section bg-[#EFEFEA] text-[#303A35] py-20 md:py-28 lg:py-32 border-t border-[rgba(48,58,53,0.12)]">
+        <div className="editorial-container">
+          <div className="mb-12 md:mb-16 text-center max-w-3xl mx-auto">
+            <span className="editorial-eyebrow text-[#C27D66] block mb-2">Recognition</span>
+            <h2 className="font-editorial text-3xl sm:text-4xl lg:text-5xl text-[#303A35] font-normal">
+              Awards & Industry Honors
+            </h2>
+            <p className="text-[#5C6661] text-sm sm:text-base mt-2 font-light">
+              A timeline of international design awards received for our residential homes, heritage restorations, and architecture.
+            </p>
+          </div>
+
           <div className="max-w-4xl mx-auto space-y-8">
-            <div className="divide-y divide-border-light border-y border-border-light">
+            <div className="divide-y divide-[rgba(48,58,53,0.12)] border-y border-[rgba(48,58,53,0.12)]">
               {timelineAwards.map((item, idx) => (
                 <div key={idx} className="gsap-reveal-item py-6 sm:py-8 grid grid-cols-1 md:grid-cols-12 gap-4 sm:gap-6 items-start">
                   
                   {/* Year */}
-                  <div className="md:col-span-2 font-editorial text-2xl text-accent-brass font-normal">
+                  <div className="md:col-span-2 font-editorial text-2xl text-[#C27D66] font-normal">
                     {item.year}
                   </div>
 
                   {/* Award Title & Project */}
                   <div className="md:col-span-6 space-y-1">
-                    <h3 className="font-editorial text-xl sm:text-2xl text-ink-primary font-normal">
+                    <h3 className="font-editorial text-xl sm:text-2xl text-[#303A35] font-normal">
                       {item.award}
                     </h3>
-                    <p className="font-sans text-xs uppercase tracking-wider text-accent-brass font-semibold">
+                    <p className="font-sans text-xs uppercase tracking-wider text-[#C27D66] font-semibold">
                       Project: {item.project} • {item.location}
                     </p>
-                    <p className="text-xs text-ink-muted leading-relaxed font-light pt-2">
+                    <p className="text-xs text-[#5C6661] leading-relaxed font-light pt-2">
                       {item.notes}
                     </p>
                   </div>
 
                   {/* Location Badge */}
                   <div className="md:col-span-4 flex md:justify-end items-center gap-2 pt-1">
-                    <span className="inline-flex items-center gap-1.5 px-3 py-1 bg-bg-surface border border-border-light font-sans text-[11px] font-semibold uppercase tracking-wider text-ink-muted shadow-subtle">
-                      <Award className="w-3.5 h-3.5 text-accent-brass" />
-                      Verified Citation
+                    <span className="inline-flex items-center gap-1.5 px-3 py-1 bg-[#F5F5F0] border border-[rgba(48,58,53,0.12)] font-sans text-[11px] font-semibold uppercase tracking-wider text-[#5C6661] shadow-subtle rounded-[2px]">
+                      <Award className="w-3.5 h-3.5 text-[#C27D66]" />
+                      Awarded Project
                     </span>
                   </div>
 
@@ -384,52 +394,52 @@ export function About() {
               ))}
             </div>
           </div>
-        </Section>
+        </div>
       </div>
 
-      {/* 5. CTA LINKING TO /TEAM AND /CAREERS (#F1ECE3 Warm Section with #FFFFFF Cards) */}
-      <section className="bg-bg-warm border-t border-border-warm/60 py-16 sm:py-24">
+      {/* 5. CTA LINKING TO /TEAM AND /CAREERS (Deep Forest Black #1D211F) */}
+      <section className="bg-[#1D211F] text-[#F5F3ED] border-t border-[rgba(245,243,237,0.10)] py-16 sm:py-24">
         <div className="editorial-container">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8">
             
             {/* Team Callout Card */}
-            <div className="p-6 sm:p-12 bg-bg-surface border border-border-light space-y-6 shadow-subtle flex flex-col justify-between">
+            <div className="p-6 sm:p-12 bg-[#242C28] border border-[rgba(245,243,237,0.12)] hover:border-[#C27D66] transition-colors duration-300 space-y-6 shadow-subtle flex flex-col justify-between rounded-[2px]">
               <div className="space-y-4">
-                <div className="flex items-center gap-2 text-accent-brass font-sans text-xs font-semibold uppercase tracking-widest">
+                <div className="flex items-center gap-2 text-[#C27D66] font-sans text-xs font-semibold uppercase tracking-widest">
                   <Users className="w-4 h-4" />
-                  <span>The Collective</span>
+                  <span>Our Team</span>
                 </div>
-                <h3 className="font-editorial text-2xl sm:text-4xl text-ink-primary font-normal">
-                  Meet the Architects & Directors Behind Our Works
+                <h3 className="font-editorial text-2xl sm:text-4xl text-[#F5F3ED] font-normal">
+                  Meet the Architects & Designers Behind Our Work
                 </h3>
-                <p className="text-ink-muted text-sm sm:text-base leading-relaxed font-light">
-                  Get to know Camille Vauquelin, Édouard Laurent, Helena Lindqvist, and our multidisciplinary teams in Paris, London, and Geneva.
+                <p className="text-[#A3ADA7] text-sm sm:text-base leading-relaxed font-light">
+                  Get to know Camille Vauquelin, Rohan Mehta, Priya Sundaram, and our experienced teams in Mumbai, Bengaluru, and Hyderabad.
                 </p>
               </div>
               <div className="pt-4">
                 <Button to="/team" variant="primary" size="md" arrow>
-                  View Full Team Profiles
+                  Meet Our Full Team
                 </Button>
               </div>
             </div>
 
             {/* Careers Callout Card */}
-            <div className="p-6 sm:p-12 bg-bg-surface border border-border-light space-y-6 shadow-subtle flex flex-col justify-between">
+            <div className="p-6 sm:p-12 bg-[#242C28] border border-[rgba(245,243,237,0.12)] hover:border-[#C27D66] transition-colors duration-300 space-y-6 shadow-subtle flex flex-col justify-between rounded-[2px]">
               <div className="space-y-4">
-                <div className="flex items-center gap-2 text-accent-brass font-sans text-xs font-semibold uppercase tracking-widest">
+                <div className="flex items-center gap-2 text-[#C27D66] font-sans text-xs font-semibold uppercase tracking-widest">
                   <Hammer className="w-4 h-4" />
-                  <span>Studio Culture</span>
+                  <span>Careers</span>
                 </div>
-                <h3 className="font-editorial text-2xl sm:text-4xl text-ink-primary font-normal">
-                  Join Our Atelier Fellowship & Open Positions
+                <h3 className="font-editorial text-2xl sm:text-4xl text-[#F5F3ED] font-normal">
+                  Join Our Architecture & Design Studio
                 </h3>
-                <p className="text-ink-muted text-sm sm:text-base leading-relaxed font-light">
-                  We are actively welcoming curious project architects, interior designers, 3D visualizers, and model-making interns.
+                <p className="text-[#A3ADA7] text-sm sm:text-base leading-relaxed font-light">
+                  We are always happy to connect with talented project architects, interior designers, and 3D visualizers.
                 </p>
               </div>
               <div className="pt-4">
-                <Button to="/careers" variant="outline" size="md" arrow>
-                  Explore Career Opportunities
+                <Button to="/careers" variant="outlineLight" size="md" arrow>
+                  View Open Positions
                 </Button>
               </div>
             </div>
@@ -442,3 +452,4 @@ export function About() {
 }
 
 export default About;
+

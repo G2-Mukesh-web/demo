@@ -22,15 +22,15 @@ export class ErrorBoundary extends React.Component {
   render() {
     if (this.state.hasError) {
       return (
-        <div className="min-h-screen bg-[#FDFBF7] text-[#1B2A47] flex items-center justify-center p-6 text-center">
-          <div className="max-w-md space-y-6 bg-white p-8 border border-[#EAE6DF] rounded-[2px] shadow-subtle">
-            <span className="font-sans text-[11px] font-semibold uppercase tracking-[0.2em] text-[#D4AF37] block">
+        <div className="min-h-screen bg-bg-primary text-ink-primary flex items-center justify-center p-6 text-center">
+          <div className="max-w-md space-y-6 bg-bg-surface p-8 border border-border-light rounded-[2px] shadow-subtle">
+            <span className="font-sans text-[11px] font-semibold uppercase tracking-[0.2em] text-accent-brass block">
               Atelier Vauquelin
             </span>
-            <h1 className="font-editorial text-3xl text-[#1B2A47] font-normal">
+            <h1 className="font-editorial text-3xl text-ink-primary font-normal">
               Something went unexpected.
             </h1>
-            <p className="text-xs sm:text-sm text-[#5F6470] font-light leading-relaxed">
+            <p className="text-xs sm:text-sm text-ink-muted font-light leading-relaxed">
               We encountered a temporary rendering issue. Please reload the page or return to the main monograph.
             </p>
             <div className="pt-2 flex justify-center gap-3">

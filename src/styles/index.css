@@ -20,29 +20,31 @@
     display: flex;
     flex-direction: column;
     font-family: var(--font-sans);
+    background-color: var(--color-bg-primary);
+    color: var(--color-ink-primary);
   }
 
-  /* Display & Section Headings */
+  /* Display & Section Headings (Cormorant Garamond) */
   h1, h2, h3, h4, .font-editorial {
     font-family: var(--font-serif);
-    letter-spacing: -0.02em;
+    letter-spacing: -0.015em;
     font-feature-settings: "liga" on, "kern" on;
     font-weight: 400;
   }
 
-  /* UI Text & Paragraphs */
+  /* UI Text & Paragraphs (Inter) */
   p, span, a, button, input, textarea, select, label {
     font-family: var(--font-sans);
   }
 
   ::selection {
-    background-color: #D4AF37;
-    color: #1B2A47;
+    background-color: #C27D66;
+    color: #1D211F;
   }
 
   /* Keyboard Accessibility Focus */
   *:focus-visible {
-    outline: 1px solid #D4AF37;
+    outline: 1px solid #C27D66;
     outline-offset: 2px;
   }
 }
@@ -52,15 +54,15 @@
     font-family: var(--font-serif);
     font-size: var(--text-display-hero);
     line-height: var(--leading-tight);
-    letter-spacing: -0.025em;
-    font-weight: 400;
+    letter-spacing: -0.015em;
+    font-weight: 500;
   }
 
   .editorial-heading-1 {
     font-family: var(--font-serif);
     font-size: var(--text-h1);
     line-height: var(--leading-heading);
-    letter-spacing: -0.02em;
+    letter-spacing: -0.01em;
     font-weight: 400;
   }
 
@@ -68,7 +70,7 @@
     font-family: var(--font-serif);
     font-size: var(--text-h2);
     line-height: var(--leading-heading);
-    letter-spacing: -0.015em;
+    letter-spacing: -0.005em;
     font-weight: 400;
   }
 
@@ -76,18 +78,18 @@
     font-family: var(--font-serif);
     font-size: var(--text-h3);
     line-height: 1.25;
-    letter-spacing: -0.01em;
+    letter-spacing: 0em;
     font-weight: 400;
   }
 
-  /* Small uppercase labels and metadata (Plus Jakarta Sans) */
+  /* Small uppercase labels and metadata (Inter) */
   .editorial-eyebrow {
     font-family: var(--font-sans);
     font-size: 0.75rem;
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.16em;
-    color: #D4AF37;
+    color: #C27D66;
   }
 
   .editorial-meta {
@@ -95,7 +97,7 @@
     font-size: 0.6875rem;
     font-weight: 500;
     text-transform: uppercase;
-    letter-spacing: 0.14em;
+    letter-spacing: 0.12em;
   }
 
   .editorial-container {
@@ -122,16 +124,23 @@
   }
 }
 
-/* Architectural Card System & Smooth 0.3s Border Transitions */
+/* Architectural Card System & Smooth 250-350ms Border Transitions */
 .arch-card {
-  background-color: #FFFFFF;
-  border: 1px solid #EAE6DF;
+  background-color: #303A35;
+  border: 1px solid rgba(245, 243, 237, 0.12);
   border-radius: 2px;
   transition: border-color 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-.arch-card:hover {
-  border-color: #D4AF37;
+.arch-card-light {
+  background-color: #EFEFEA;
+  border: 1px solid rgba(48, 58, 53, 0.12);
+  border-radius: 2px;
+  transition: border-color 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.arch-card:hover, .arch-card-light:hover {
+  border-color: #C27D66;
 }
 
 /* Architectural Form Inputs */
@@ -141,28 +150,29 @@ input[type="tel"],
 input[type="password"],
 input[type="number"],
 input[type="file"],
+input[type="url"],
 textarea,
 select {
-  background-color: #FFFFFF;
-  border: 1px solid #EAE6DF;
-  color: #1B2A47;
+  background-color: #EFEFEA;
+  border: 1px solid rgba(48, 58, 53, 0.18);
+  color: #303A35;
   border-radius: 2px;
   transition: border-color 0.3s ease, outline 0.3s ease;
 }
 
 input::placeholder,
 textarea::placeholder {
-  color: #777777;
+  color: #75807B;
 }
 
 input:focus,
 textarea:focus,
 select:focus {
-  border-color: #D4AF37 !important;
-  outline: 1px solid #D4AF37 !important;
+  border-color: #C27D66 !important;
+  outline: 1px solid #C27D66 !important;
 }
 
-/* Subtle architectural image scale (1.02) on hover */
+/* Subtle architectural image scale (1.025) on hover */
 .img-zoom-wrapper {
   overflow: hidden;
   border-radius: 2px;
@@ -175,7 +185,7 @@ select:focus {
 
 .group:hover .img-zoom-wrapper img,
 .img-zoom-wrapper:hover img {
-  transform: scale(1.02);
+  transform: scale(1.025);
 }
 
 /* Architectural Animated Underline Link */
@@ -193,7 +203,7 @@ select:focus {
   left: 0;
   width: 0%;
   height: 1px;
-  background-color: #D4AF37;
+  background-color: #C27D66;
   transition: width 0.3s ease;
 }
 

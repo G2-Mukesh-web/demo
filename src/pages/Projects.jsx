@@ -80,27 +80,27 @@ export function Projects() {
   }, [filteredAndSortedProjects]);
 
   return (
-    <div className="w-full overflow-x-hidden">
+    <div className="w-full overflow-x-hidden bg-[#303A35] text-[#F5F3ED]">
       <SEO
-        title="Portfolio & Built Works"
-        description="Comprehensive architectural archive of Atelier Vauquelin — residential monoliths, alpine sanctuaries, cultural pavilions, and historic restorations across Europe."
+        title="Our Projects & Portfolio"
+        description="Explore our portfolio of private homes, holiday retreats, cultural spaces, and historic restorations across India."
       />
 
-      {/* 1. PORTFOLIO HERO BANNER (#F1ECE3 Warm Alternate Section) */}
-      <section className="bg-bg-warm py-20 lg:py-28 border-b border-border-warm/60">
+      {/* 1. PORTFOLIO HERO BANNER (Deep Muted Forest/Sage #303A35) */}
+      <section className="bg-[#303A35] py-20 lg:py-28 border-b border-[rgba(245,243,237,0.12)] text-[#F5F3ED]">
         <div className="editorial-container">
           <div className="max-w-4xl">
-            <span className="editorial-eyebrow mb-3 block">Complete Archive</span>
-            <h1 className="font-editorial text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-normal text-ink-primary mb-6">
-              Built Works, Sanctuaries & Restorations
+            <span className="editorial-eyebrow mb-3 block text-[#C27D66]">Our Portfolio</span>
+            <h1 className="font-editorial text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-normal text-[#F5F3ED] mb-6">
+              Featured Homes, Restorations & Spaces
             </h1>
-            <p className="text-ink-muted text-base sm:text-lg lg:text-xl font-light leading-relaxed">
-              A comprehensive ledger of private residences, cultural pavilions, alpine thermal sanctuaries, and historic palazzo interventions across France, Switzerland, Italy, the UK, and Japan.
+            <p className="text-[#A3ADA7] text-base sm:text-lg lg:text-xl font-light leading-relaxed">
+              Explore our collection of private homes, cultural spaces, wellness retreats, and heritage renovations across Mumbai, Bengaluru, Hyderabad, Goa, and across India.
             </p>
           </div>
 
           {/* 2. FILTER & SORT CONTROLS TOOLBAR */}
-          <div className="mt-12 pt-8 border-t border-border-warm/60 flex flex-col lg:flex-row lg:items-center justify-between gap-6">
+          <div className="mt-12 pt-8 border-t border-[rgba(245,243,237,0.12)] flex flex-col lg:flex-row lg:items-center justify-between gap-6">
             
             {/* Category Filter Pills */}
             <div className="flex flex-wrap items-center gap-2 sm:gap-3">
@@ -124,17 +124,17 @@ export function Projects() {
             </div>
 
             {/* View Mode & Sort Controls */}
-            <div className="flex items-center gap-4 text-xs font-sans text-ink-subtle shrink-0">
+            <div className="flex items-center gap-4 text-xs font-sans text-[#A3ADA7] shrink-0">
               
               {/* Year Sort Toggle */}
-              <div className="flex items-center gap-2 border-r border-border-light pr-4">
+              <div className="flex items-center gap-2 border-r border-[rgba(245,243,237,0.15)] pr-4">
                 <span className="uppercase tracking-wider text-[11px]">Sort:</span>
                 <button
                   onClick={handleSortChange}
-                  className="text-ink-primary font-semibold hover:text-accent-brass transition-colors uppercase tracking-wider flex items-center gap-1 min-h-[44px]"
+                  className="text-[#F5F3ED] font-semibold hover:text-[#C27D66] transition-colors uppercase tracking-wider flex items-center gap-1 min-h-[44px]"
                 >
                   <span>{sortOrder === 'newest' ? 'Newest' : 'Oldest'}</span>
-                  {sortOrder === 'newest' ? <ArrowDownAZ className="w-3.5 h-3.5 text-accent-brass" /> : <ArrowUpZA className="w-3.5 h-3.5 text-accent-brass" />}
+                  {sortOrder === 'newest' ? <ArrowDownAZ className="w-3.5 h-3.5 text-[#C27D66]" /> : <ArrowUpZA className="w-3.5 h-3.5 text-[#C27D66]" />}
                 </button>
               </div>
 
@@ -142,22 +142,22 @@ export function Projects() {
               <div className="hidden sm:flex items-center gap-1">
                 <button
                   onClick={() => setViewMode('grid')}
-                  className={`p-2 border ${viewMode === 'grid' ? 'border-accent-brass bg-accent-brass text-white' : 'border-border-light bg-bg-surface text-ink-muted hover:text-ink-primary'}`}
+                  className={`p-2 border rounded-[2px] transition-colors ${viewMode === 'grid' ? 'border-[#C27D66] bg-[#C27D66] text-[#1D211F]' : 'border-[rgba(245,243,237,0.15)] bg-[#242C28] text-[#A3ADA7] hover:text-[#F5F3ED]'}`}
                   title="3-Column Grid"
                 >
                   <Grid3X3 className="w-3.5 h-3.5" />
                 </button>
                 <button
                   onClick={() => setViewMode('large')}
-                  className={`p-2 border ${viewMode === 'large' ? 'border-accent-brass bg-accent-brass text-white' : 'border-border-light bg-bg-surface text-ink-muted hover:text-ink-primary'}`}
+                  className={`p-2 border rounded-[2px] transition-colors ${viewMode === 'large' ? 'border-[#C27D66] bg-[#C27D66] text-[#1D211F]' : 'border-[rgba(245,243,237,0.15)] bg-[#242C28] text-[#A3ADA7] hover:text-[#F5F3ED]'}`}
                   title="2-Column Large View"
                 >
                   <LayoutGrid className="w-3.5 h-3.5" />
                 </button>
                 <button
                   onClick={() => setViewMode('list')}
-                  className={`p-2 border ${viewMode === 'list' ? 'border-accent-brass bg-accent-brass text-white' : 'border-border-light bg-bg-surface text-ink-muted hover:text-ink-primary'}`}
-                  title="Ledger List View"
+                  className={`p-2 border rounded-[2px] transition-colors ${viewMode === 'list' ? 'border-[#C27D66] bg-[#C27D66] text-[#1D211F]' : 'border-[rgba(245,243,237,0.15)] bg-[#242C28] text-[#A3ADA7] hover:text-[#F5F3ED]'}`}
+                  title="List View"
                 >
                   <List className="w-3.5 h-3.5" />
                 </button>
@@ -168,154 +168,155 @@ export function Projects() {
         </div>
       </section>
 
-      {/* 3. PROJECTS GRID (#FAF9F5 with #FFFFFF Card Surfaces) */}
-      <Section variant="default" spacing="loose">
-        {filteredAndSortedProjects.length === 0 && (
-          <div className="text-center py-24 space-y-4">
-            <h2 className="font-editorial text-3xl text-ink-primary font-normal">No works found in this category.</h2>
-            <p className="text-ink-muted text-sm font-light">Try selecting another filter or viewing the complete archive.</p>
-            <Button onClick={() => handleCategoryChange('All')} variant="outline" size="sm">
-              Show All Works
-            </Button>
-          </div>
-        )}
+      {/* 3. PROJECTS GRID */}
+      <section className="py-20 md:py-28 lg:py-32 bg-[#303A35] text-[#F5F3ED]">
+        <div className="editorial-container">
+          {filteredAndSortedProjects.length === 0 && (
+            <div className="text-center py-24 space-y-4">
+              <h2 className="font-editorial text-3xl text-[#F5F3ED] font-normal">No projects found in this category.</h2>
+              <p className="text-[#A3ADA7] text-sm font-light">Try selecting another filter or viewing all projects.</p>
+              <Button onClick={() => handleCategoryChange('All')} variant="outlineLight" size="sm">
+                Show All Projects
+              </Button>
+            </div>
+          )}
 
-        {viewMode !== 'list' && (
-          <div
-            ref={gridContainerRef}
-            className={`grid gap-6 sm:gap-8 lg:gap-12 ${
-              viewMode === 'large'
-                ? 'grid-cols-1 md:grid-cols-2'
-                : 'grid-cols-1 sm:grid-cols-2 lg:grid-cols-3'
-            }`}
-          >
-            {filteredAndSortedProjects.map((project) => (
-              <div
-                key={project.id}
-                data-flip-id={project.id}
-                className="project-grid-item block"
-              >
-                <article className="group block relative">
-                  <Link to={`/projects/${project.slug}`} className="block">
-                    
-                    <div className={`img-zoom-wrapper relative w-full ${viewMode === 'large' ? 'aspect-[16/10]' : 'aspect-[4/3]'} bg-bg-warm overflow-hidden mb-4 border border-border-light`}>
-                      <img
-                        src={project.thumbnail || project.heroImage}
-                        alt={`${project.title} — ${project.category} in ${project.location}`}
-                        loading="lazy"
-                        className="w-full h-full object-cover max-w-full"
-                      />
+          {viewMode !== 'list' && (
+            <div
+              ref={gridContainerRef}
+              className={`grid gap-6 sm:gap-8 lg:gap-12 ${
+                viewMode === 'large'
+                  ? 'grid-cols-1 md:grid-cols-2'
+                  : 'grid-cols-1 sm:grid-cols-2 lg:grid-cols-3'
+              }`}
+            >
+              {filteredAndSortedProjects.map((project) => (
+                <div
+                  key={project.id}
+                  data-flip-id={project.id}
+                  className="project-grid-item block"
+                >
+                  <article className="group block relative">
+                    <Link to={`/projects/${project.slug}`} className="block">
+                      
+                      <div className={`img-zoom-wrapper relative w-full ${viewMode === 'large' ? 'aspect-[16/10]' : 'aspect-[4/3]'} bg-[#1D211F] overflow-hidden mb-4 border border-[rgba(245,243,237,0.12)] group-hover:border-[#C27D66] transition-colors duration-300 rounded-[2px]`}>
+                        <img
+                          src={project.thumbnail || project.heroImage}
+                          alt={`${project.title} — ${project.category} in ${project.location}`}
+                          loading="lazy"
+                          className="w-full h-full object-cover max-w-full"
+                        />
 
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/35 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500 flex flex-col justify-between p-6 z-20">
-                        <div className="flex items-center justify-between text-white font-sans text-[11px] uppercase tracking-wider">
-                          <span className="bg-white/95 text-ink-primary px-2.5 py-1 font-semibold text-[10px]">
-                            {project.category}
-                          </span>
-                          <span className="text-white/80">{project.year}</span>
-                        </div>
-
-                        <div className="flex items-end justify-between translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
-                          <div>
-                            <p className="font-editorial text-2xl lg:text-3xl text-white font-normal leading-tight">
-                              {project.title}
-                            </p>
-                            <p className="font-sans text-[11px] uppercase tracking-wider text-accent-brass mt-1">
-                              {project.location} • {project.area}
-                            </p>
+                        <div className="absolute inset-0 bg-gradient-to-t from-[#1D211F]/90 via-[#1D211F]/40 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500 flex flex-col justify-between p-6 z-20">
+                          <div className="flex items-center justify-between text-white font-sans text-[11px] uppercase tracking-wider">
+                            <span className="bg-[#EFEFEA] text-[#303A35] px-2.5 py-1 font-semibold text-[10px] rounded-[2px]">
+                              {project.category}
+                            </span>
+                            <span className="text-[#A3ADA7]">{project.year}</span>
                           </div>
 
-                          <div className="w-10 h-10 bg-accent-brass text-white flex items-center justify-center shadow-lift shrink-0 ml-3">
-                            <ArrowUpRight className="w-4 h-4" />
+                          <div className="flex items-end justify-between translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
+                            <div>
+                              <p className="font-editorial text-2xl lg:text-3xl text-[#F5F3ED] font-normal leading-tight">
+                                {project.title}
+                              </p>
+                              <p className="font-sans text-[11px] uppercase tracking-wider text-[#C27D66] mt-1">
+                                {project.location} • {project.area}
+                              </p>
+                            </div>
+
+                            <div className="w-10 h-10 bg-[#C27D66] text-[#1D211F] flex items-center justify-center shadow-lift shrink-0 ml-3 rounded-[2px]">
+                              <ArrowUpRight className="w-4 h-4" />
+                            </div>
                           </div>
                         </div>
                       </div>
+
+                      <div className="space-y-1">
+                        <div className="flex items-center justify-between text-[11px] font-sans uppercase tracking-wider text-[#A3ADA7]">
+                          <span>{project.location}</span>
+                          <span className="text-[#C27D66] font-medium">{project.year}</span>
+                        </div>
+
+                        <h2 className="font-editorial text-2xl text-[#F5F3ED] group-hover:text-[#C27D66] transition-colors leading-snug font-normal">
+                          {project.title}
+                        </h2>
+
+                        {project.subtitle && (
+                          <p className="text-xs sm:text-sm text-[#A3ADA7] line-clamp-1 font-light">
+                            {project.subtitle}
+                          </p>
+                        )}
+                      </div>
+
+                    </Link>
+                  </article>
+                </div>
+              ))}
+            </div>
+          )}
+
+          {/* List View */}
+          {viewMode === 'list' && (
+            <div ref={gridContainerRef} className="divide-y divide-[rgba(245,243,237,0.12)] border-y border-[rgba(245,243,237,0.12)] bg-[#242C28] shadow-subtle rounded-[2px] overflow-hidden">
+              {filteredAndSortedProjects.map((project) => (
+                <div
+                  key={project.id}
+                  data-flip-id={project.id}
+                  className="project-grid-item block"
+                >
+                  <Link
+                    to={`/projects/${project.slug}`}
+                    className="group py-5 sm:py-6 grid grid-cols-1 md:grid-cols-12 gap-3 sm:gap-4 items-center hover:bg-[#303A35] px-6 transition-colors block"
+                  >
+                    <div className="md:col-span-2 font-editorial text-lg text-[#C27D66] font-normal">
+                      {project.year}
                     </div>
 
-                    <div className="space-y-1">
-                      <div className="flex items-center justify-between text-[11px] font-sans uppercase tracking-wider text-ink-subtle">
-                        <span>{project.location}</span>
-                        <span className="text-accent-brass font-medium">{project.year}</span>
-                      </div>
-
-                      <h2 className="font-editorial text-2xl text-ink-primary group-hover:text-accent-brass transition-colors leading-snug font-normal">
+                    <div className="md:col-span-4">
+                      <h2 className="font-editorial text-2xl text-[#F5F3ED] group-hover:text-[#C27D66] transition-colors font-normal">
                         {project.title}
                       </h2>
-
-                      {project.subtitle && (
-                        <p className="text-xs sm:text-sm text-ink-muted line-clamp-1 font-light">
-                          {project.subtitle}
-                        </p>
-                      )}
+                      <p className="text-xs text-[#A3ADA7] font-light line-clamp-1">
+                        {project.subtitle}
+                      </p>
                     </div>
 
+                    <div className="md:col-span-2 font-sans text-xs text-[#A3ADA7]">
+                      {project.location}
+                    </div>
+
+                    <div className="md:col-span-2">
+                      <span className="inline-block px-2.5 py-1 bg-[#1D211F] font-sans text-[10px] uppercase font-semibold tracking-wider text-[#F5F3ED] border border-[rgba(245,243,237,0.15)] rounded-[2px]">
+                        {project.category}
+                      </span>
+                    </div>
+
+                    <div className="md:col-span-2 flex items-center justify-end text-xs font-sans font-semibold uppercase tracking-wider text-[#F5F3ED] group-hover:text-[#C27D66]">
+                      <span className="hidden sm:inline mr-2">View Project</span>
+                      <ArrowUpRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                    </div>
                   </Link>
-                </article>
-              </div>
-            ))}
-          </div>
-        )}
+                </div>
+              ))}
+            </div>
+          )}
+        </div>
+      </section>
 
-        {/* List View with #FFFFFF Card Surfaces */}
-        {viewMode === 'list' && (
-          <div ref={gridContainerRef} className="divide-y divide-border-light border-y border-border-light bg-bg-surface shadow-subtle">
-            {filteredAndSortedProjects.map((project) => (
-              <div
-                key={project.id}
-                data-flip-id={project.id}
-                className="project-grid-item block"
-              >
-                <Link
-                  to={`/projects/${project.slug}`}
-                  className="group py-5 sm:py-6 grid grid-cols-1 md:grid-cols-12 gap-3 sm:gap-4 items-center hover:bg-bg-warm/40 px-6 transition-colors block"
-                >
-                  <div className="md:col-span-2 font-editorial text-lg text-accent-brass font-normal">
-                    {project.year}
-                  </div>
-
-                  <div className="md:col-span-4">
-                    <h2 className="font-editorial text-2xl text-ink-primary group-hover:text-accent-brass transition-colors font-normal">
-                      {project.title}
-                    </h2>
-                    <p className="text-xs text-ink-muted font-light line-clamp-1">
-                      {project.subtitle}
-                    </p>
-                  </div>
-
-                  <div className="md:col-span-2 font-sans text-xs text-ink-subtle">
-                    {project.location}
-                  </div>
-
-                  <div className="md:col-span-2">
-                    <span className="inline-block px-2.5 py-1 bg-bg-warm font-sans text-[10px] uppercase font-semibold tracking-wider text-ink-primary border border-border-light">
-                      {project.category}
-                    </span>
-                  </div>
-
-                  <div className="md:col-span-2 flex items-center justify-end text-xs font-sans font-semibold uppercase tracking-wider text-ink-primary group-hover:text-accent-brass">
-                    <span className="hidden sm:inline mr-2">Case Study</span>
-                    <ArrowUpRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-                  </div>
-                </Link>
-              </div>
-            ))}
-          </div>
-        )}
-
-      </Section>
-
-      {/* 4. BOTTOM INQUIRY PROMPT (#181816 Dark Premium Section) */}
-      <section className="bg-bg-dark text-white border-t border-border-dark py-16 sm:py-20 text-center">
+      {/* 4. BOTTOM INQUIRY PROMPT (Deep Forest Black #1D211F) */}
+      <section className="bg-[#1D211F] text-[#F5F3ED] border-t border-[rgba(245,243,237,0.10)] py-16 sm:py-20 text-center">
         <div className="editorial-container max-w-3xl space-y-6">
-          <span className="editorial-eyebrow text-accent-brass">Bespoke Inquiries</span>
-          <h2 className="font-editorial text-3xl sm:text-4xl lg:text-5xl text-white font-normal">
-            Commission an architectural sanctuary.
+          <span className="editorial-eyebrow text-[#C27D66]">Start Your Project</span>
+          <h2 className="font-editorial text-3xl sm:text-4xl lg:text-5xl text-[#F5F3ED] font-normal">
+            Ready to design your home or space?
           </h2>
-          <p className="text-ink-subtle text-sm sm:text-base font-light leading-relaxed">
-            Our principal partners discuss new residential and cultural commissions by private appointment in Paris, London, or Geneva.
+          <p className="text-[#A3ADA7] text-sm sm:text-base font-light leading-relaxed">
+            Our team is available for private design consultations in Mumbai, Bengaluru, or Hyderabad.
           </p>
           <div className="pt-2">
             <Button to="/contact" variant="primary" size="lg" arrow>
-              Initiate Project Brief
+              Get in Touch
             </Button>
           </div>
         </div>

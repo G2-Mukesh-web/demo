@@ -10,7 +10,7 @@ import { journalPosts } from '../data/studioData';
 export function Journal() {
   const [selectedCategory, setSelectedCategory] = useState('All');
 
-  const categories = ['All', 'Materiality', 'Philosophy', 'Press & Awards', 'Craft', 'Insights', 'Restoration'];
+  const categories = ['All', 'Materials', 'Design Tips', 'News & Awards', 'Craftsmanship', 'Insights', 'Restoration'];
 
   const filteredPosts = useMemo(() => {
     if (selectedCategory === 'All') return journalPosts;
@@ -23,25 +23,25 @@ export function Journal() {
   return (
     <div className="w-full overflow-x-hidden">
       <SEO
-        title="Monograph & Journal Dispatches"
-        description="Scholarly essays, stone research, and project monographs from the architectural laboratories of Atelier Vauquelin."
+        title="Journal & Articles"
+        description="Design ideas, material research, and project stories from Atelier Vauquelin."
       />
 
-      {/* 1. JOURNAL HERO BANNER (#F1ECE3 Warm Alternate Section) */}
-      <section className="bg-bg-warm py-20 lg:py-28 border-b border-border-warm/60">
+      {/* 1. JOURNAL HERO BANNER (Deep Muted Forest #303A35) */}
+      <section className="bg-[#303A35] text-[#F5F3ED] py-20 lg:py-28 border-b border-[rgba(245,243,237,0.10)]">
         <div className="editorial-container">
           <div className="max-w-4xl">
-            <span className="editorial-eyebrow mb-3 block">Studio Monograph & Dispatches</span>
-            <h1 className="font-editorial text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-normal text-ink-primary mb-6">
-              Essays, Material Inquiries & Architecture Notes
+            <span className="font-sans text-xs uppercase tracking-widest text-[#C27D66] font-semibold mb-3 block">Journal & Articles</span>
+            <h1 className="font-editorial text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-normal text-[#F5F3ED] mb-6">
+              Design Stories, Material Ideas & Studio News
             </h1>
-            <p className="text-ink-muted text-base sm:text-lg lg:text-xl font-light leading-relaxed">
-              A quarterly publication exploring raw geological memory, passive acoustic atmospheres, structural craftsmanship, and project monographs from our ateliers in Paris, London, and Geneva.
+            <p className="text-[#A3ADA7] text-base sm:text-lg lg:text-xl font-light leading-relaxed">
+              Articles on design ideas, natural materials, home renovation tips, and project updates from our architecture studio.
             </p>
           </div>
 
           {/* 2. CATEGORY FILTERS */}
-          <div className="mt-12 pt-8 border-t border-border-warm/60 flex flex-wrap items-center gap-2 sm:gap-3">
+          <div className="mt-12 pt-8 border-t border-[rgba(245,243,237,0.10)] flex flex-wrap items-center gap-2 sm:gap-3">
             {categories.map((cat) => {
               const count = cat === 'All'
                 ? journalPosts.length
@@ -63,18 +63,22 @@ export function Journal() {
         </div>
       </section>
 
-      {/* 3. LEAD FEATURED MONOGRAPH ESSAY (#FFFFFF Surface Section) */}
+      {/* 3. LEAD FEATURED ARTICLE (Warm Linen #EFEFEA) */}
       {selectedCategory === 'All' && leadPost && (
-        <section className="border-b border-border-light bg-bg-surface py-12 lg:py-16">
+        <section className="border-b border-[rgba(48,58,53,0.12)] bg-[#EFEFEA] text-[#303A35] py-12 lg:py-16">
           <div className="editorial-container">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
               
               <div className="lg:col-span-7">
                 <Link to={`/journal/${leadPost.slug}`} className="block group">
-                  <div className="img-zoom-wrapper aspect-[16/10] bg-bg-warm overflow-hidden border border-border-light shadow-card">
+                  <div className="img-zoom-wrapper aspect-[16/10] bg-[#EAE8E1] overflow-hidden border border-[rgba(48,58,53,0.12)] shadow-subtle rounded-[2px]">
                     <img
-                      src={leadPost.image}
+                      src={leadPost.image || leadPost.coverImage || leadPost.thumbnail || "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=85"}
                       alt={leadPost.title}
+                      onError={(e) => {
+                        e.currentTarget.onerror = null;
+                        e.currentTarget.src = "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=85";
+                      }}
                       className="w-full h-full object-cover max-w-full"
                     />
                   </div>
@@ -82,9 +86,9 @@ export function Journal() {
               </div>
 
               <div className="lg:col-span-5 space-y-6">
-                <div className="flex items-center gap-3 font-sans text-xs uppercase tracking-wider text-ink-subtle">
-                  <span className="text-accent-brass uppercase tracking-widest font-semibold">
-                    Featured Monograph
+                <div className="flex items-center gap-3 font-sans text-xs uppercase tracking-wider text-[#5C6661]">
+                  <span className="text-[#C27D66] uppercase tracking-widest font-semibold">
+                    Featured Article
                   </span>
                   <span>•</span>
                   <span>{leadPost.date}</span>
@@ -92,19 +96,19 @@ export function Journal() {
                   <span>{leadPost.readTime}</span>
                 </div>
 
-                <h2 className="font-editorial text-3xl sm:text-4xl lg:text-5xl text-ink-primary group-hover:text-accent-brass transition-colors leading-tight font-normal">
+                <h2 className="font-editorial text-3xl sm:text-4xl lg:text-5xl text-[#303A35] group-hover:text-[#C27D66] transition-colors leading-tight font-normal">
                   <Link to={`/journal/${leadPost.slug}`}>
                     {leadPost.title}
                   </Link>
                 </h2>
 
-                <p className="text-sm sm:text-base text-ink-muted leading-relaxed font-light">
+                <p className="text-sm sm:text-base text-[#5C6661] leading-relaxed font-light">
                   {leadPost.excerpt}
                 </p>
 
                 <div className="pt-2">
                   <Button to={`/journal/${leadPost.slug}`} variant="primary" size="md" arrow>
-                    Read Monograph Essay
+                    Read Full Article
                   </Button>
                 </div>
               </div>
@@ -114,38 +118,40 @@ export function Journal() {
         </section>
       )}
 
-      {/* 4. JOURNAL ARCHIVE GRID (#FAF9F5 with #FFFFFF Cards) */}
-      <Section variant="default" spacing="loose">
-        {filteredPosts.length === 0 ? (
-          <div className="text-center py-24 space-y-4">
-            <h2 className="font-editorial text-3xl text-ink-primary font-normal">No articles found in this category.</h2>
-            <p className="text-ink-muted text-sm font-light">Select another topic above or view the complete monograph archive.</p>
-            <Button onClick={() => setSelectedCategory('All')} variant="outline" size="sm">
-              Show All Dispatches
-            </Button>
-          </div>
-        ) : (
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 lg:gap-10">
-            {gridPosts.map((post) => (
-              <JournalCard key={post.id} post={post} />
-            ))}
-          </div>
-        )}
-      </Section>
+      {/* 4. JOURNAL ARCHIVE GRID (Deep Muted Forest #303A35) */}
+      <section className="bg-[#303A35] text-[#F5F3ED] py-16 sm:py-24">
+        <div className="editorial-container">
+          {filteredPosts.length === 0 ? (
+            <div className="text-center py-24 space-y-4">
+              <h2 className="font-editorial text-3xl text-[#F5F3ED] font-normal">No articles found in this category.</h2>
+              <p className="text-[#A3ADA7] text-sm font-light">Select another topic above or view all articles.</p>
+              <Button onClick={() => setSelectedCategory('All')} variant="outlineLight" size="sm">
+                Show All Articles
+              </Button>
+            </div>
+          ) : (
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 lg:gap-10">
+              {gridPosts.map((post) => (
+                <JournalCard key={post.id} post={post} />
+              ))}
+            </div>
+          )}
+        </div>
+      </section>
 
-      {/* 5. MONOGRAPH REGISTRY SUBSCRIPTION BANNER (#181816 Dark Premium Section) */}
-      <section className="bg-bg-dark text-white border-t border-border-dark py-16 sm:py-24 text-center">
+      {/* 5. NEWSLETTER SUBSCRIPTION BANNER (Deep Forest Black #1D211F) */}
+      <section className="bg-[#1D211F] text-[#F5F3ED] border-t border-[rgba(245,243,237,0.10)] py-16 sm:py-24 text-center">
         <div className="editorial-container max-w-3xl space-y-6">
-          <span className="editorial-eyebrow text-accent-brass">Print & Digital Registry</span>
-          <h2 className="font-editorial text-3xl sm:text-4xl lg:text-5xl text-white font-normal">
-            Subscribe to the Atelier Vauquelin Monograph.
+          <span className="font-sans text-xs uppercase tracking-widest text-[#C27D66] font-semibold block">Newsletter</span>
+          <h2 className="font-editorial text-3xl sm:text-4xl lg:text-5xl text-[#F5F3ED] font-normal">
+            Subscribe to Studio Updates
           </h2>
-          <p className="text-ink-subtle text-sm sm:text-base font-light leading-relaxed">
-            Delivered quarterly to patrons, critics, and academic institutions — featuring archival essays, uncompressed plate photography, and geotechnical studies.
+          <p className="text-[#A3ADA7] text-sm sm:text-base font-light leading-relaxed">
+            Get our latest articles on interior design, natural materials, and new project photos delivered straight to your inbox.
           </p>
           <div className="pt-2">
             <Button to="/contact" variant="primary" size="lg" arrow>
-              Join Academic Mailing Registry
+              Get in Touch
             </Button>
           </div>
         </div>
